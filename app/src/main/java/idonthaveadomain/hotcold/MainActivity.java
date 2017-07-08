@@ -55,17 +55,15 @@ public class MainActivity extends Activity implements ConnectionCallbacks
         this.client.connect();
     }
 
-    public void clickGo(View view)
-    {
+    public void clickGo(View view) {
         if (!this.client.isConnected()) {
             AlertDialog alert = new AlertDialog.Builder(MainActivity.this).create();
             alert.setTitle("Not connected");
             alert.setMessage("Not yet connected to location services");
-            alert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which)
-                        { dialog.dismiss(); }
-                    });
+            alert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }});
             alert.show();
             return;
         }
@@ -99,14 +97,13 @@ public class MainActivity extends Activity implements ConnectionCallbacks
                 AlertDialog alert = new AlertDialog.Builder(MainActivity.this).create();
                 alert.setTitle("Nothing found");
                 alert.setMessage("No locations were found within the specified radius.");
-                alert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which)
-                            { dialog.dismiss(); }
-                        });
+                alert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }});
                 alert.show();
             }
-            //((Button) findViewById(R.id.btnGo)).setText(result);
+            // ((Button) findViewById(R.id.btnGo)).setText(result);
         }
         catch (IOException e) {
             e.printStackTrace();

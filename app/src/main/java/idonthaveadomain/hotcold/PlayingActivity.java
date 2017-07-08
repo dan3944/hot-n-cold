@@ -64,9 +64,8 @@ public class PlayingActivity extends Activity implements ConnectionCallbacks, Lo
     }
 
     public void onLocationChanged(Location loc) {
-        float[] results = new float[1];
-
         if (loc != null) {
+            float[] results = new float[1];
             Location.distanceBetween(loc.getLatitude(), loc.getLongitude(), this.goalLat, this.goalLong, results);
             this.distance = results[0];
 
